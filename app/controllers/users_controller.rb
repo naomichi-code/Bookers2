@@ -1,11 +1,11 @@
-class BooksController < ApplicationController
+class UsersController < ApplicationController
   before_action :authenticate_user!
   def show
   end
 
-  def index
+  def edit
   end
 
-  def edit
+  def index
   end
 end

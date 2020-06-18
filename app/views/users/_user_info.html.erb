@@ -10,39 +10,39 @@
     </div>
 <% end %>
 
-    <div class="col-md-3">
-        <h2>User Info</h2>
-        <table class="table">
-            <tbody>
-                <tr><%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %></tr>
-                <tr>
-                    <td>name</td>
-                    <td><%= user.name %></td>
-                </tr>
-                <tr>
-                    <td>introduction</td>
-                    <td><%= user.introduction %></td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="col-md-12 btn btn-default btn-block edit-btn">
-        <%= link_to "",edit_user_path(current_user.id),class: "glyphicon glyphicon-wrench icon-danger",'aria-hidden' => true %>
-        </div>
-        
-        <%= form_for(book) do |f| %>
-            <div class="col-md-12">
-                <h2>New book</h2>
-                <div>
-                    <label class="">Title</label><br>
-                    <%= f.text_field :title %>
-                </div>
-                <div>
-                    <label class="">Opinion</label></br>
-                    <%= f.text_area :body %>
-                </div>               
-                    <%= f.submit %>
-                <% end %>
-            </div>
-
+<div class="col-md-3">
+    <h2>User Info</h2>
+    <table class="table">
+        <tbody>
+            <tr><%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %></tr>
+            <tr>
+                <td>name</td>
+                <td><%= user.name %></td>
+            </tr>
+            <tr>
+                <td>introduction</td>
+                <td><%= user.introduction %></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="field row">
+    <%= link_to "",edit_user_path(current_user.id),class: " btn btn-default btn-block edit-btn glyphicon glyphicon-wrench icon-danger",'aria-hidden' => true %>
     </div>
+    
+    <%= form_for(book) do |f| %>
+        <h2>New book</h2>
+        <div class="field row">
+            <label class="">Title</label><br>
+            <%= f.text_field :title, class: "col-md-12" %>
+        </div>
+        <div class="field row">
+            <label class="">Opinion</label></br>
+            <%= f.text_area :body, class: "col-md-12" %>
+        </div>
+            <div class="field row">
+          <%= f.submit class:"col-md-12 btn btn-primary btn-block edit-btn book-btn" %>
+        </div>
+     <% end %>
+        
+</div>
 

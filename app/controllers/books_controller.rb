@@ -1,12 +1,16 @@
 class BooksController < ApplicationController
   before_action :authenticate_user!
     def show
-      @user = User.find_by(params[:id])
       @book = Book.new
+      @book_show = Book.find(params[:id])
+
+
+
     end
 
     def index
-      @user = User.find_by(params[:id])
+      @user = User.find(current_user.id)
+
       @books = Book.all
       @book = Book.new
     end
@@ -15,7 +19,7 @@ class BooksController < ApplicationController
       @book = Book.new(book_params)
       @book.user_id = current_user.id
       if @book .save
-        redirect_to book_path(@book.id)
+        redirect_to book_path(@book.id),notice: "You have creatad book successfully."
       else
         render :index
       end
@@ -27,7 +31,7 @@ class BooksController < ApplicationController
 
   private
     def book_params
-      params.require(:book).permit(:title, :body, :user_id)
+      params.require(:book).permit(:title, :body)
     end
 
 

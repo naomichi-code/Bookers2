@@ -33,6 +33,9 @@
     </nav>
 <div class="container">
   <main>
+<% if flash[:notice] %>
+  <p class="flash-text"><%= flash[:notice] %></p>
+<% end %>
     <div class="row" >
 
       <%= yield %>

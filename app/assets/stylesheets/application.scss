@@ -24,7 +24,7 @@
 }
 
 
-.btn{
+.top-btn{
     color: gray;
 }
 
@@ -47,7 +47,13 @@
 h2{
 margin :20px 0 10px 0;
 }
-.tr-top{
 
-    border-top-style:none;
+
+.edit-link{
+
+    color:gray;
+}
+.edit-link:hover{
+    background-color: #000000;
+    color: honeydew;
 }

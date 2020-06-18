@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :correct_user, only: [:edit, :update]
+
   def show
     @user = User.find(params[:id])
     @book = Book.new
@@ -27,9 +28,16 @@ class UsersController < ApplicationController
   end
 
 
+
 private
 def user_params
   params.require(:user).permit(:name, :introduction,:profile_image)
+end
+def correct_user
+  micropost = User.find(current_user.id)
+    unless micropost
+      redirect_to  root_path
+    end
 end
 
 

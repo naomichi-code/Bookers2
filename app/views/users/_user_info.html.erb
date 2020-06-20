@@ -10,8 +10,8 @@
     </div>
 <% end %>
 
-<div class="col-md-3">
-    <h2>User Info</h2>
+<div class="col-xs-3">
+    <h2>User info</h2>
     <table class="table">
         <tbody>
             <tr><%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %></tr>
@@ -33,11 +33,11 @@
         <h2>New book</h2>
         <div class="field row">
             <label class="">Title</label><br>
-            <%= f.text_field :title, class: "col-md-12" %>
+            <%= f.text_field :title, class: "col-xs-12" %>
         </div>
         <div class="field row">
             <label class="">Opinion</label></br>
-            <%= f.text_area :body, class: "col-md-12" %>
+            <%= f.text_area :body, class: "col-xs-12" %>
         </div>
             <div class="field row">
           <%= f.submit class:"col-md-12 btn btn-primary btn-block edit-btn book-btn" %>

@@ -24,7 +24,7 @@
 
             <% else %>
               <li><%= link_to " Home", root_path, class: "glyphicon glyphicon-home", 'aria-hidden' => true %></li>
-              <li><%= link_to " about", home_about_path, class: "glyphicon glyphicon-link", 'aria-hidden' => true %></li>
+              <li><%= link_to " About", home_about_path, class: "glyphicon glyphicon-link", 'aria-hidden' => true %></li>
               <li><%= link_to " sign up", new_user_registration_path, class: "glyphicon glyphicon-edit", 'aria-hidden' => true %></li>
               <li><%= link_to " login", new_user_session_path, class: "glyphicon glyphicon-log-in", 'aria-hidden' => true %></li>
             <% end %>
@@ -33,9 +33,7 @@
     </nav>
 <div class="container">
   <main>
-<% if flash[:notice] %>
-  <p class="flash-text"><%= flash[:notice] %></p>
-<% end %>
+
     <div class="row" >
 
       <%= yield %>

@@ -1,4 +1,6 @@
-
+<% if flash[:notice] %>
+  <p class="flash-text"><%= flash[:notice] %></p>
+<% end %>
     <div class="row">
         <div class="col-md-8 col-md-offset-3 ">
                 <h1>welcome to <span class="glyphicon glyphicon-book" aria-hidden="true"><strong>Bookers</strong>　!!</spam></h1>
@@ -8,8 +10,8 @@
 
                 <div class="row ml">
                     <div class="col-md-8  ">
-                        <%= link_to "log in", new_user_session_path, class: "btn btn-default btn-info btn-md btn-block top-btn", 'aria-hidden' => true %>
-                        <%= link_to "sign up", new_user_registration_path, class: "btn btn-default btn-success btn-md btn-block top-btn", 'aria-hidden' => true %>
+                        <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-info btn-md btn-block top-btn", 'aria-hidden' => true %>
+                        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-default btn-success btn-md btn-block top-btn", 'aria-hidden' => true %>
                     </div>
                 </div>
 
